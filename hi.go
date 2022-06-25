@@ -1,7 +1,6 @@
 package funengine
 
-import "fmt"
-
-func SayHi() {
-	fmt.Println("Hi :)")
+// Giving you a string of happiness :)
+func SayHi() string {
+	return "Hi :)"
 }
