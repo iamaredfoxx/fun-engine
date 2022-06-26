@@ -3,6 +3,12 @@ module github.com/iamaredfoxx/fun-engine
 go 1.18
 
 require (
+	gorm.io/driver/mysql v1.3.4
+	gorm.io/driver/postgres v1.3.7
+	gorm.io/gorm v1.23.6
+)
+
+require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
@@ -28,7 +34,7 @@ require (
 	golang.org/x/sys v0.0.0-20211103235746-7861aae1554b // indirect
 	golang.org/x/text v0.3.7 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gorm.io/driver/mysql v1.3.4 // indirect
-	gorm.io/driver/postgres v1.3.7 // indirect
-	gorm.io/gorm v1.23.6 // indirect
 )
+
+retract v0.1.1
+retract v0.1.0
