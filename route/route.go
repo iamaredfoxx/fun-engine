@@ -31,7 +31,7 @@ func Register(config RouteConfiguration, paths []RouteInterface) {
 }
 
 func Bind(port string) {
-	Route().route().Start(strings.Join([]string{":", port}, ""))
+	Route().getEcho().Start(strings.Join([]string{":", port}, ""))
 }
 
 type route struct {
@@ -39,14 +39,14 @@ type route struct {
 	config *RouteConfiguration
 }
 
-func (r *route) route() *echo.Echo {
+func (r *route) getEcho() *echo.Echo {
 	return r.echo
 }
 
 func (r *route) prep() {
-	r.route().HideBanner = r.config.HideBanner
-	r.route().DisableHTTP2 = r.config.DisableHTTP2
-	r.route().Debug = r.config.Debug
-	r.route().Server.ReadTimeout = time.Duration(r.config.ReadTimeout)
-	r.route().Server.WriteTimeout = time.Duration(r.config.WriteTimeout)
+	r.getEcho().HideBanner = r.config.HideBanner
+	r.getEcho().DisableHTTP2 = r.config.DisableHTTP2
+	r.getEcho().Debug = r.config.Debug
+	r.getEcho().Server.ReadTimeout = time.Duration(r.config.ReadTimeout)
+	r.getEcho().Server.WriteTimeout = time.Duration(r.config.WriteTimeout)
 }
